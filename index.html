@@ -10,7 +10,7 @@
     <body id="cuerpo">
         <main id="bloque">
             <!--editar lo que sigue-->
-            <img src="avatar.jpg" alt="Imagen de avatar">
+            <img src="avatar.jpg" alt="Imagen de avatar" width="100" height="100">            
             <h1>¡Hola mundo!</h1>
             <h2>Me llamo <a href="#" target="_blank">magdarivas</a></h2>
             <p>Soy estudiante de último año de Diseño de la Pontificia Universidad Católica de Chile.</p>
@@ -27,6 +27,7 @@
 
         <script>
         var canvas;
+        var d;
 
         function setup() {
           canvas = createCanvas(windowWidth, windowHeight);
@@ -36,12 +37,16 @@
         }
 
         function draw() {
-          
+          d = random(10,100)
+            noStroke(); //quita borde a elipse
+            fill(255,d); //números del 0 al 255 son las escalas de grises, 0 negro, 255 blanco, para colores seguir lógica RGB (x,x,x)
+            ellipse(mouseX,mouseY,d,d);
         }
 
         function windowResized() {
           resizeCanvas(windowWidth, windowHeight);
         }
+       
         </script>
     </body>
 </html>
