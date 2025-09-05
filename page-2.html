@@ -25,6 +25,7 @@
             <p>En la segunda página interior puedes ver cómo adapto <a href="https://p5js.org/examples/" target="_blank">un ejemplo</a> de p5.js a página completa. El ejemplo se llama Kaleidoscope</p>
         </main>
         <script>
+             var canvas;
        // Define the global variables.
 // The symmetry variable will define how many reflective sections the canvas
 // is split into.
@@ -34,13 +35,11 @@ let symmetry = 6;
 let angle = 360 / symmetry;
 
 function setup() {
-  describe(
-    `Dark grey canvas that reflects the lines drawn within it in ${symmetry} sections.`
-  );
-  createCanvas(720, 400);
-  angleMode(DEGREES);
-  background(50);
-}
+          canvas = createCanvas(windowWidth, windowHeight);
+          canvas.parent("cuerpo");
+          canvas.position(0,0);
+          canvas.style('z-index','-1');
+        }
 
 function draw() {
   // Move the 0,0 coordinates of the canvas to the center, instead of in
