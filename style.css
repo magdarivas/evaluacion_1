@@ -5,17 +5,32 @@
   padding: 0;
 }
 
-:root {
-  --mostrando: silver;
-  --esperando: gray;
-  --flotando: black;
+:root { /*colores forma botones*/
+  --mostrando: #FFCECF;
+  --esperando: #F769AC;
+  --flotando: #7B2864;
 }
 
 body{
-  background: #ccc; /*color fondo entero, no es el rectangulo*/
+  background: lightblue; /*color fondo entero, no es el rectangulo*/
   color: #008F39;
   font-family: 'Times New Roman', serif;
 
+}
+a{ 
+  color: blueviolet;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover{
+  color: blue;
+  text-decoration: underline;
+  transition: all ease 2s;
+}
+
+a:hover:after{ 
+  content:" ❁";
 }
 
 #bloque {
@@ -59,7 +74,7 @@ nav{
 nav a{
   line-height: 1;
   text-decoration: none;
-  color:black;
+  color:green; /*color letra cuando botón esta "inactivo"*/
   margin:0 1rem 0 0;
   padding:0.3rem 1rem;
   background:var(--esperando);
@@ -67,13 +82,13 @@ nav a{
   transition:all ease .75s;
 }
 
-nav a:hover{
-  color:white;
+nav a:hover{ /*color letra al poner mouse*/
+  color:#217379; 
   background:var(--flotando);  
   transition:all ease .75s;
 }
 
-nav a.active{
-  color:black;
-  background:var(--mostrando);
+nav a.active{ /*color letra de botón de página seleccionada*/
+  color: #3C979E; 
+  background:var(--mostrando); 
 }
